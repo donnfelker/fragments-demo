@@ -63,6 +63,11 @@ public class MainActivity extends ActionBarActivity
                 break;
             case 5:
                 startActivity(new Intent(this, CommunicationActivity.class));
+                break;
+            case 6:
+                startActivity(new Intent(this, RegistrationWizard.class));
+                break;
+
         }
 
     }

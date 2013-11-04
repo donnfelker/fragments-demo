@@ -9,7 +9,7 @@
         android:targetSdkVersion="19" />
 
     <application
-        android:name=".FragmentsDemoApplication"
+        android:name="com.donnfelker.fragmentsdemo.FragmentsDemoApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -32,8 +32,12 @@
             android:label="@string/title_from_code_activity" >
         </activity>
         <activity
-            android:name=".CommunicationActivity"
+            android:name="com.donnfelker.fragmentsdemo.CommunicationActivity"
             android:label="@string/title_activity_interface_based" >
+        </activity>
+        <activity
+            android:name="com.donnfelker.fragmentsdemo.RegistrationWizard"
+            android:label="@string/title_activity_registration_wizard" >
         </activity>
     </application>
 

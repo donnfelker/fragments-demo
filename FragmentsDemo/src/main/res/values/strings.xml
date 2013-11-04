@@ -16,9 +16,15 @@
     <string name="hello_world">Hello world!</string>
     <string name="hello_from_interface_based">Hello From Interface Based Fragment</string>
     <string name="red_one">Red One</string>
-    <string name="red_two" />
+    <string name="red_two"></string>
     <string name="interface_desc">Interface</string>
     <string name="Otto">Otto</string>
     <string name="red_button_clicked">Red Button Clicked!</string>
+    <string name="title_activity_registration_wizard">Registration</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="next">Next</string>
+    <string name="address_line_one">Address Line 1</string>
+    <string name="prev">Prev</string>
 
 </resources>

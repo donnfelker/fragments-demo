@@ -11,7 +11,10 @@ import dagger.Provides;
         injects = {
                 FragmentsDemoApplication.class,
                 CommunicationActivity.class,
-                CommunicationFragment.class
+                CommunicationFragment.class,
+                RegistrationWizard.class,
+                Step1Fragment.class,
+                Step2Fragment.class
         }
 )
 public class DemoModule {
