@@ -8,14 +8,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.donnfelker.fragmentsdemo.events.RedButtonClickedEvent;
+import com.squareup.otto.Bus;
+
+import javax.inject.Inject;
+
 /**
  * A placeholder fragment containing a simple view.
  */
 public class CommunicationFragment extends Fragment {
 
+    @Inject Bus bus;
+
     RedButtonListener redButtonListener;
 
     public CommunicationFragment() {
+        Injector.inject(this);
     }
 
     @Override
@@ -38,6 +46,15 @@ public class CommunicationFragment extends Fragment {
                 } else {
                     Log.d(getClass().getName(), "Hmmm, red button listener was null.");
                 }
+            }
+        });
+
+
+        Button ottoBased = (Button) getView().findViewById(R.id.otto_button);
+        ottoBased.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bus.post(new RedButtonClickedEvent());
             }
         });
     }
