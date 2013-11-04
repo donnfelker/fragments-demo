@@ -12,5 +12,13 @@
     <string name="title_activity_simple">Simple Activity</string>
     <string name="hello_from_simple_fragment">Hello From Simple Fragment!</string>
     <string name="title_from_code_activity">From Code</string>
+    <string name="title_activity_interface_based">Interface Based</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hello_from_interface_based">Hello From Interface Based Fragment</string>
+    <string name="red_one">Red One</string>
+    <string name="red_two" />
+    <string name="interface_desc">Interface</string>
+    <string name="Otto">Otto</string>
+    <string name="red_button_clicked">Red Button Clicked!</string>
 
 </resources>

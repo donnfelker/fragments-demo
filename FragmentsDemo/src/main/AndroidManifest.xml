@@ -30,6 +30,10 @@
             android:name="com.donnfelker.fragmentsdemo.FromCodeActivity"
             android:label="@string/title_from_code_activity" >
         </activity>
+        <activity
+            android:name=".CommunicationActivity"
+            android:label="@string/title_activity_interface_based" >
+        </activity>
     </application>
 
 </manifest>
