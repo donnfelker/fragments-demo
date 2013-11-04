@@ -9,5 +9,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_simple">Simple Activity</string>
+    <string name="hello_from_simple_fragment">Hello From Simple Fragment!</string>
 
 </resources>

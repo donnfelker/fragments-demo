@@ -1,6 +1,7 @@
 package com.donnfelker.fragmentsdemo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -49,11 +50,21 @@ public class MainActivity extends ActionBarActivity
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
-        // update the main content by replacing fragments
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+
+        switch(position) {
+            case 0: case 1:case 2:
+                // update the main content by replacing fragments
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                        .commit();
+                break;
+            case 3:
+                // Start the next activity.
+                startActivity(new Intent(this, SimpleActivity.class));
+                break;
+        }
+
     }
 
     public void onSectionAttached(int number) {
