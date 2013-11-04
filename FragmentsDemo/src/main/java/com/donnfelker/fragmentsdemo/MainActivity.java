@@ -60,8 +60,10 @@ public class MainActivity extends ActionBarActivity
                         .commit();
                 break;
             case 3:
-                // Start the next activity.
                 startActivity(new Intent(this, SimpleActivity.class));
+                break;
+            case 4:
+                startActivity(new Intent(this, FromCodeActivity.class));
                 break;
         }
 

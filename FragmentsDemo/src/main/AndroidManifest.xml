@@ -26,6 +26,10 @@
             android:name="com.donnfelker.fragmentsdemo.SimpleActivity"
             android:label="@string/title_activity_simple" >
         </activity>
+        <activity
+            android:name="com.donnfelker.fragmentsdemo.FromCodeActivity"
+            android:label="@string/title_from_code_activity" >
+        </activity>
     </application>
 
 </manifest>
