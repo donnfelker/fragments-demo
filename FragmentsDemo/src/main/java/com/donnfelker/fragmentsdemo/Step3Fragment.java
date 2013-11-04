@@ -15,7 +15,6 @@ import com.squareup.otto.Bus;
 
 import javax.inject.Inject;
 
-
 /**
  * A placeholder fragment containing a simple view.
  */
@@ -45,15 +44,12 @@ public class Step3Fragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.prev_next, menu);
+        inflater.inflate(R.menu.next, menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
-            case R.id.prev:
-                bus.post(new PrevStepEvent());
-                break;
             case R.id.next:
                 bus.post(new NextStepEvent());
                 break;

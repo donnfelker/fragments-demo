@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.donnfelker.fragmentsdemo.events.NextStepEvent;
 import com.donnfelker.fragmentsdemo.events.PrevStepEvent;
@@ -22,6 +23,7 @@ import javax.inject.Inject;
 public class Step2Fragment extends Fragment {
 
     @Inject Bus bus;
+    private TextView addressOne;
 
     public Step2Fragment() {
         Injector.inject(this);
@@ -40,22 +42,26 @@ public class Step2Fragment extends Fragment {
         setHasOptionsMenu(true);
 
         Injector.inject(this);
+
+        addressOne = (TextView) getView().findViewById(R.id.address_one);
+
+        if(getArguments() != null && getArguments().containsKey(Constants.Extras.KEY_ADDRESS_ONE)) {
+            addressOne.setText(getArguments().getString(Constants.Extras.KEY_ADDRESS_ONE));
+        }
     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.prev_next, menu);
+        inflater.inflate(R.menu.next, menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
-            case R.id.prev:
-                bus.post(new PrevStepEvent());
-                break;
             case R.id.next:
-                bus.post(new NextStepEvent());
+                final NextStepEvent next = new NextStepEvent(addressOne.getText());
+                bus.post(next);
                 break;
             default:
                 return super.onOptionsItemSelected(item);

@@ -8,6 +8,6 @@
         android:id="@+id/address_one"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:text="@string/address_line_one"/>
+        android:hint="@string/address_line_one"/>
 
 </LinearLayout>

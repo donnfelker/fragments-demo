@@ -32,5 +32,7 @@
     <string name="blue">Blue</string>
     <string name="welcome_to_app">Welcome To Our App!\nClick \'Lets Go\' to continue.</string>
     <string name="lets_go">Lets Go!</string>
+    <string name="error_first_name_required">First Name is required.</string>
+    <string name="error_last_name_required">Last Name is required.</string>
 
 </resources>

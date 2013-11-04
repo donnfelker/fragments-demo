@@ -1,12 +1,12 @@
 package com.donnfelker.fragmentsdemo;
 
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.donnfelker.fragmentsdemo.events.NextStepEvent;
-import com.donnfelker.fragmentsdemo.events.PrevStepEvent;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
 
@@ -17,6 +17,9 @@ public class RegistrationWizard extends ActionBarActivity {
     private static final String CURRENT_STEP = "current_step";
     @Inject Bus bus;
     private int currentStep;
+    private CharSequence firstName;
+    private CharSequence lastName;
+    private CharSequence address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,12 +77,24 @@ public class RegistrationWizard extends ActionBarActivity {
 
     @Subscribe
     public void onNextStepEvent(NextStepEvent event) {
+
+        switch (currentStep) {
+            case 0:
+                this.firstName = event.getFirstNameText();
+                this.lastName = event.getLastNameText();
+                break;
+            case 1:
+                this.address = event.getAddress();
+                break;
+        }
+
         currentStep++;
         loadStep();
     }
 
-    @Subscribe
-    public void onPrevStepEvent(PrevStepEvent event) {
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
         currentStep--;
         loadStep();
     }
@@ -112,22 +127,43 @@ public class RegistrationWizard extends ActionBarActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new Step3Fragment(), Step3Fragment.class.getName())
                 .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                .addToBackStack(null)
                 .commit();
     }
 
     private void loadSecondStep() {
+
+        final Step2Fragment step2 = new Step2Fragment();
+
+        if(address != null && address.length() > 0) {
+            final Bundle bundle = new Bundle();
+            bundle.putString(Constants.Extras.KEY_ADDRESS_ONE, address.toString());
+            step2.setArguments(bundle);
+        }
+
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new Step2Fragment(), Step2Fragment.class.getName())
+                .replace(R.id.container, step2, Step2Fragment.class.getName())
                 .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                .addToBackStack(null)
                 .commit();
     }
 
     private void loadFirstStep() {
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new Step1Fragment(), Step1Fragment.class.getName())
+
+        final Step1Fragment step1 = new Step1Fragment();
+
+        if(firstName != null && firstName.length() > 0 && lastName != null && lastName.length() > 0) {
+            final Bundle bundle = new Bundle();
+            bundle.putString(Constants.Extras.KEY_FIRST_NAME, firstName.toString());
+            bundle.putString(Constants.Extras.KEY_LAST_NAME, lastName.toString());
+            step1.setArguments(bundle);
+        }
+
+        final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+        ft.replace(R.id.container, step1, Step1Fragment.class.getName())
                 .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
                 .commit();
     }
-
 
 }
