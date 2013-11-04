@@ -1,15 +1,9 @@
 package com.donnfelker.fragmentsdemo;
 
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
 
 import com.donnfelker.fragmentsdemo.events.NextStepEvent;
 import com.donnfelker.fragmentsdemo.events.PrevStepEvent;
@@ -102,17 +96,23 @@ public class RegistrationWizard extends ActionBarActivity {
                 loadThirdStep();
                 break;
             case 3:
-                goToWelcomeScreen();
+                goToFourthStep();
                 break;
         }
     }
 
-    private void goToWelcomeScreen() {
-
+    private void goToFourthStep() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new Step4Fragment(), Step4Fragment.class.getName())
+                .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                .commit();
     }
 
     private void loadThirdStep() {
-
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new Step3Fragment(), Step3Fragment.class.getName())
+                .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                .commit();
     }
 
     private void loadSecondStep() {

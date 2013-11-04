@@ -26,5 +26,11 @@
     <string name="next">Next</string>
     <string name="address_line_one">Address Line 1</string>
     <string name="prev">Prev</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="your_favorite_rgb_color">What is your favorite RGB color?</string>
+    <string name="blue">Blue</string>
+    <string name="welcome_to_app">Welcome To Our App!\nClick \'Lets Go\' to continue.</string>
+    <string name="lets_go">Lets Go!</string>
 
 </resources>

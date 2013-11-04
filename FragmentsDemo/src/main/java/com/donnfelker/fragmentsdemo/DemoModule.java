@@ -14,7 +14,9 @@ import dagger.Provides;
                 CommunicationFragment.class,
                 RegistrationWizard.class,
                 Step1Fragment.class,
-                Step2Fragment.class
+                Step2Fragment.class,
+                Step3Fragment.class,
+                Step4Fragment.class
         }
 )
 public class DemoModule {
