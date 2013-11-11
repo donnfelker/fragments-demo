@@ -110,7 +110,8 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.title_activity_simple),
                         getString(R.string.title_from_code_activity),
                         getString(R.string.title_activity_interface_based),
-                        getString(R.string.title_activity_registration_wizard)
+                        getString(R.string.title_activity_registration_wizard),
+                        getString(R.string.title_carousel)
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;

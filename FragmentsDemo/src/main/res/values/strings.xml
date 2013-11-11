@@ -34,5 +34,6 @@
     <string name="lets_go">Lets Go!</string>
     <string name="error_first_name_required">First Name is required.</string>
     <string name="error_last_name_required">Last Name is required.</string>
+    <string name="title_carousel">Carousel</string>
 
 </resources>

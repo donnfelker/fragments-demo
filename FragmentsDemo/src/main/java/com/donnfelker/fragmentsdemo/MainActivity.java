@@ -47,10 +47,11 @@ public class MainActivity extends ActionBarActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
         switch(position) {
             case 0: case 1:case 2:
                 // update the main content by replacing fragments
-                FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                         .commit();
@@ -67,6 +68,11 @@ public class MainActivity extends ActionBarActivity
             case 6:
                 startActivity(new Intent(this, RegistrationWizard.class));
                 break;
+            case 7:
+                // update the main content by replacing fragments
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, new CarouselFragment())
+                        .commit();
 
         }
 
