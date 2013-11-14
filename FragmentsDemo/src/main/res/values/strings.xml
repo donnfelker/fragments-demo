@@ -12,7 +12,7 @@
     <string name="title_activity_simple">Simple Activity</string>
     <string name="hello_from_simple_fragment">Hello From Simple Fragment!</string>
     <string name="title_from_code_activity">From Code</string>
-    <string name="title_activity_interface_based">Interface Based</string>
+    <string name="title_activity_fragment_communication">Communication</string>
     <string name="hello_world">Hello world!</string>
     <string name="hello_from_interface_based">Hello From Interface Based Fragment</string>
     <string name="red_one">Red One</string>

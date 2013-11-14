@@ -33,7 +33,7 @@
         </activity>
         <activity
             android:name="com.donnfelker.fragmentsdemo.CommunicationActivity"
-            android:label="@string/title_activity_interface_based" >
+            android:label="@string/title_activity_fragment_communication" >
         </activity>
         <activity
             android:name="com.donnfelker.fragmentsdemo.RegistrationWizard"
