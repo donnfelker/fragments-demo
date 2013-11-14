@@ -18,11 +18,6 @@ public class SimpleActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.simple_activity_main);
 
-//        if (savedInstanceState == null) {
-//            getSupportFragmentManager().beginTransaction()
-//                    .add(R.id.container, new SimpleFragment())
-//                    .commit();
-//        }
     }
 
 
