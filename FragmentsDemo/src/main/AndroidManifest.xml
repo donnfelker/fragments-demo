@@ -39,6 +39,10 @@
             android:name="com.donnfelker.fragmentsdemo.RegistrationWizard"
             android:label="@string/title_activity_registration_wizard" >
         </activity>
+        <activity
+            android:name="com.donnfelker.fragmentsdemo.TabDemoActivity"
+            android:label="@string/title_activity_tab_demo" >
+        </activity>
     </application>
 
 </manifest>

@@ -81,6 +81,8 @@ public class MainActivity extends ActionBarActivity
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, new CarouselFragment())
                         .commit();
+            case 8:
+               startActivity(new Intent(this, TabDemoActivity.class));
 
         }
 
